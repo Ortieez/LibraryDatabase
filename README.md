@@ -8,10 +8,11 @@ How to run it:
 
 ```
     pip install mariadb flask 
-    
+
     // this depends on your OS
     py .\app.py
 ```
 
 Output looks like this:
+
 ![](https://i.imgur.com/4ye1HmN.png)
