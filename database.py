@@ -3,16 +3,15 @@ import sys
 
 class Connection:
         def __init__(self):
-            self.conn = mariadb.connect(
+            try: 
+                self.conn = mariadb.connect(
                     user="root",
                     password="",
                     host="127.0.0.1",
                     port=3306,
                     database="knihovna"
                 )
-            self.conn.autocommit = False
-            
-            try: 
+                self.conn.autocommit = False
                 self.cursor = self.conn.cursor()
             except mariadb.Error as errorConnect:
                 print(f"Error connecting to MariaDB Platform: {errorConnect}")

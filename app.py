@@ -14,4 +14,4 @@ def index():
     return render_template('index.html', books=books, departments=departments, employees=employees)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
