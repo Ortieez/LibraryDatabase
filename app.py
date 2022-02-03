@@ -4,14 +4,21 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-db = database.Connection()
-books = db.selectBooks()
-departments = db.selectDepartments()
-employees = db.selectEmployees()
+class Website:
+    def __init__(self):
+        self.db = database.Connection()
+        self.books = self.db.selectBooks()
+        self.departments = self.db.selectDepartments()
+        self.employees = self.db.selectEmployees()
 
-@app.route("/")
-def index():
-    return render_template('index.html', books=books, departments=departments, employees=employees)
+    def run(self):
+        app.run()
+
+    @app.route("/")
+    def index():
+        return render_template('index.html', books=DB.books, departments=DB.departments, employees=DB.employees)
 
 if __name__ == '__main__':
-    app.run()
+    DB = Website()
+    DB.run()
+   

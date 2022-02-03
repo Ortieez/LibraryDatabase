@@ -37,13 +37,3 @@ class Connection:
             for object in self.cursor:
                 self.array.append(object)
             return self.array
-
-def run():
-    database = Connection()
-    books = database.selectBooks()
-    departments = database.selectDepartments()
-    employees = database.selectEmployees()
-        
-if __name__ == '__main__':
-    run()
-    
