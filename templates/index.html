@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Knihovna</title>
+</head>
+
+<body>
+    <details>
+        <summary>Knihy</summary>
+        <div>
+            <p>
+                {% for row in books %}
+            <ul>
+                {% for element in row %}
+                <li>{{element}}</li>
+                {% endfor %}
+
+            </ul>
+            {% endfor %}
+            </p>
+        </div>
+    </details>
+    <br>
+    <details>
+        <summary>Oddělení</summary>
+        <div>
+            <p>
+                {% for row in departments %}
+            <ul>
+                <li>{{row|join(', ')}}</li>
+            </ul>
+            {% endfor %}
+            </p>
+        </div>
+    </details>
+    <br>
+    <details>
+        <summary>Zaměstnanci</summary>
+        <div>
+            <p>
+                {% for row in employees %}
+            <ul>
+                <li>{{row|join(', ')}}
+            </ul>
+            {% endfor %}
+            </p>
+        </div>
+    </details>
+</body>
+
+</html>
